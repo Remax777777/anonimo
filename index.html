@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carta para Cata</title>
+    <style>
+        body {
+            background: white;
+            border: 10px solid pink;
+            padding: 20px;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        .mensaje {
+            font-size: 20px;
+            color: black;
+        }
+        .imagenes {
+            background-image: url('mochi-mochimons.gif');
+            background-repeat: repeat;
+            background-size: 100px;
+            height: 200px;
+        }
+        .pregunta {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .opciones {
+            margin-top: 20px;
+        }
+        .si, .no {
+            font-size: 20px;
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            cursor: pointer;
+        }
+        .si {
+            background: pink;
+            font-size: 40px;
+        }
+        .no {
+            background: lightgray;
+            font-size: 20px;
+        }
+    </style>
+    <script>
+        function aumentarSi() {
+            let si = document.querySelector('.si');
+            let no = document.querySelector('.no');
+            let noSize = parseFloat(window.getComputedStyle(no).fontSize);
+            let siSize = parseFloat(window.getComputedStyle(si).fontSize);
+            
+            if (noSize > 5) {
+                no.style.fontSize = (noSize - 5) + 'px';
+            }
+            si.style.fontSize = (siSize + 10) + 'px';
+        }
+        function mensajeBonito() {
+            document.body.innerHTML = '<h1>Preparata para el mejor 14 de febrero de tu vida, te amo! ❤️</h1>';
+        }
+    </script>
+</head>
+<body>
+    <div class="mensaje">
+        <p>Cata, como sé que querías que te lo pidiera de manera romántica y linda, no se me ocurrió mejor forma que hacerte esta carta en forma de página.</p>
+        <p>Quiero decirte que sos lo que más amo en todo el mundo y me haces demasiado feliz.</p>
+        <p>La verdad es que ver tu sonrisa me genera una sensación que ni sé cómo explicarla, y ni hablar de cómo me miran tus ojitos hermosos.</p>
+    </div>
+    <div class="imagenes"></div>
+    <div class="pregunta">¿Quieres ser mi San Valentín? ❤️</div>
+    <div class="opciones">
+        <button class="si" onclick="mensajeBonito()">Sí</button>
+        <button class="no" onclick="aumentarSi()">No ☹️</button>
+    </div>
+</body>
+</html>
